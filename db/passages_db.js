@@ -1,17 +1,17 @@
 const client = require('./client');
 
-const createPassage = async ({author, title, passage}) => {
+const createPassage = async ({author, title, excerpt}) => {
     try {
-        const { rows } = await client.query(
+        const { rows: [passage] } = await client.query(
             `
-            INSERT INTO passages(author, title, passage)
+            INSERT INTO passages(author, title, excerpt)
             VALUES($1, $2, $3)
             RETURNING *;
             `,
-            [author, title, passage]
+            [author, title, excerpt]
         );
 
-        return rows;
+        return passage;
     } catch (error) {
         throw error;
     }
