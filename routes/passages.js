@@ -30,7 +30,7 @@ passagesRouter.get('/:id', async (req, res, next) => {
     }
 })
 
-passagesRouter.post('/', (req, res, next) => {
+passagesRouter.post('/', async (req, res, next) => {
     const { author, title, excerpt } = req.body;
 
     try {

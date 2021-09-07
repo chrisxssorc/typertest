@@ -21,7 +21,6 @@
   "bugs": {
     "url": "https://github.com/chrisxssorc/typertest/issues"
   },
-  "homepage": "https://github.com/chrisxssorc/typertest#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "cors": "^2.8.5",
@@ -36,5 +35,18 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
+  },
+  "proxy": "http://localhost:5000",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

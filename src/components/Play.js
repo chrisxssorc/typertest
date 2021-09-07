@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
-const Play = () => {
+const Play = ({passages}) => {
+    console.log(passages)
     return (
         <div className="Play">
             <h1>
