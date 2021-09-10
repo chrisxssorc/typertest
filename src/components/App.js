@@ -4,22 +4,13 @@ import {
     Route,
     Switch
 } from 'react-router-dom';
-import { getAllPassages } from '../api/index';
 
 import Navbar from './Navbar';
 import Play from './Play';
 import Home from './Home';
 
 const App = () => {
-    const [passages, setPassages] = useState([]);
-
-    useEffect(() => {
-        getAllPassages()
-        .then((passages) => {
-            setPassages(passages);
-        })
-        .catch(console.error);
-    }, []);
+    
 
     return (
         <Router>
@@ -30,9 +21,7 @@ const App = () => {
                     <Home />
                 </Route>
                 <Route exact path="/play">
-                    <Play 
-                    passages = {passages}
-                    />
+                    <Play />
                 </Route>
                 </div>
             </Switch>

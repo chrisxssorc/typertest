@@ -8,3 +8,7 @@
 .Navbar {
     background-color: red;
 }
+
+.prompt {
+    display: flex;
+}
