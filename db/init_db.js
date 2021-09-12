@@ -52,7 +52,7 @@ async function populateInitialPassages() {
             {
                 author: 'Lidia Yuknavitch',
                 title: 'The Chronology of Water',
-                excerpt: 'I don’t have any problem understanding why people flunk out of college or quit their jobs or cheat on each other or break the law or spray-paint walls. A little bit outside of things is where some people feel each other. We do it to replace the frame of family. We do it to erase and remake our origins in their own images. To say, I too was here.'
+                excerpt: "I don't have any problem understanding why people flunk out of college or quit their jobs or cheat on each other or break the law or spray-paint walls. A little bit outside of things is where some people feel each other. We do it to replace the frame of family. We do it to erase and remake our origins in their own images. To say, I too was here."
             },
             {
                 author: 'Pablo Neruda',
