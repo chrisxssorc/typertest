@@ -8,6 +8,7 @@ import {
 import Navbar from './Navbar';
 import Play from './Play';
 import Home from './Home';
+import Timer from './Timer';
 
 const App = () => {
     
@@ -22,6 +23,7 @@ const App = () => {
                 </Route>
                 <Route exact path="/play">
                     <Play />
+                    <Timer />
                 </Route>
                 </div>
             </Switch>
