@@ -9,6 +9,21 @@
     background-color: red;
 }
 
-.prompt {
+.timer {
     display: flex;
+}
+
+.playPage {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Play {
+    width: 75%;
+}
+
+.Play .prompt {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
 }

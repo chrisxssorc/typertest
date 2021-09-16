@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from 'react';
 
-const Timer = () => {
-    const [isActive, setIsActive] = useState(false);
-    const [isStopped, setIsStopped] = useState(false);
-    const [time, setTime] = useState(0);
+const Timer = (
+    {isActive, 
+    setIsActive, 
+    isStopped, 
+    setIsStopped, 
+    time, 
+    setTime}) => {
 
     useEffect(() => {
         let interval = null;
@@ -37,7 +40,13 @@ const Timer = () => {
     }
 
     return (
-        <div></div>
+        <div className="timer">
+            <div>
+                {new Date(time * 1000).toISOString().substr(14, 5)}
+            </div>
+            <button onClick={handleStart}>Start</button>
+            <button onClick={()=>{handleStop(); handleReset()}}>Stop</button>
+        </div>
     )
 }
 

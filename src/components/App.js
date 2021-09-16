@@ -11,7 +11,9 @@ import Home from './Home';
 import Timer from './Timer';
 
 const App = () => {
-    
+    const [isActive, setIsActive] = useState(false);
+    const [isStopped, setIsStopped] = useState(false);
+    const [time, setTime] = useState(0);
 
     return (
         <Router>
@@ -22,8 +24,19 @@ const App = () => {
                     <Home />
                 </Route>
                 <Route exact path="/play">
-                    <Play />
-                    <Timer />
+                    <div className="playPage">
+                        <Play 
+                        setIsActive={setIsActive}
+                        setIsStopped={setIsStopped}
+                        setTime={setTime} />
+                        <Timer
+                        isActive={isActive}
+                        setIsActive={setIsActive}
+                        isStopped={isStopped}
+                        setIsStopped={setIsStopped}
+                        time={time}
+                        setTime={setTime} />
+                    </div>
                 </Route>
                 </div>
             </Switch>

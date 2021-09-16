@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { getAllPassages } from '../api/index';
 
-const Play = () => {
+const Play = ({setIsActive, setIsStopped, setTime}) => {
     const [playPrompt, setPlayPrompt] = useState({});
     const [passage, setPassage] = useState([]);
     const [testProgress, setTestProgress] = useState([]);
@@ -48,6 +48,29 @@ const Play = () => {
         const final = progress.concat(testProgress.slice(inputText.length))
         setTestProgress(final)
     }, [inputText])
+
+    const handleStart = () => {
+        setIsActive(true);
+        setIsStopped(false);
+    }
+
+    const handleStop = () => {
+        setIsActive(false);
+        setIsStopped(true);
+    }
+
+    const handleReset = () => {
+        setTime(0);
+        setIsActive(false);
+    }
+
+    const handleTimer = () => {
+        if (inputText.length >= passage.length) {
+            handleStop();
+        } else {
+            handleStart();
+        }
+    }
     
     return (
         <div className="Play">
@@ -81,7 +104,10 @@ const Play = () => {
                     placeholder="Start Typing..."
                     rows="10"
                     cols="100"
-                    onChange={(event) => setInputText(event.target.value.split(''))}>
+                    onChange={(event) => {
+                        handleTimer();
+                        setInputText(event.target.value.split(''));
+                        }}>
                 </textarea>
             </form>
         </div>
