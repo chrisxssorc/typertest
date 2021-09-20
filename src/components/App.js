@@ -21,19 +21,15 @@ const App = () => {
                 <div className="App">
                 <Navbar />
                 <Route exact path="/">
-                    <Home />
-                </Route>
-                <Route exact path="/play">
                     <div className="playPage">
                         <Play 
                         setIsActive={setIsActive}
                         setIsStopped={setIsStopped}
-                        setTime={setTime} />
+                        setTime={setTime}
+                        time={time} />
                         <Timer
                         isActive={isActive}
-                        setIsActive={setIsActive}
                         isStopped={isStopped}
-                        setIsStopped={setIsStopped}
                         time={time}
                         setTime={setTime} />
                     </div>

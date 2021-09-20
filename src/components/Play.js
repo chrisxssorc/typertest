@@ -1,18 +1,21 @@
 import React, {useState, useEffect} from 'react';
 import { getAllPassages } from '../api/index';
 
-const Play = ({setIsActive, setIsStopped, setTime}) => {
+const Play = ({setIsActive, setIsStopped, setTime, time}) => {
     const [playPrompt, setPlayPrompt] = useState({});
     const [passage, setPassage] = useState([]);
+    const [totalWords, setTotalWords] = useState(0);
     const [testProgress, setTestProgress] = useState([]);
     const [inputText, setInputText] = useState([]);
+    const [isFinished, setIsFinished] = useState(false);
 
     useEffect(() => {
         getAllPassages()
         .then((passages) => {
-            const randomInt = Math.floor(Math.random() * passages.length)
-            setPlayPrompt(passages[randomInt])
-            setPassage(passages[randomInt].excerpt.split(''))
+            const randomInt = Math.floor(Math.random() * passages.length);
+            setPlayPrompt(passages[randomInt]);
+            setTotalWords(passages[randomInt].excerpt.split(' ').length);
+            setPassage(passages[randomInt].excerpt.split(''));
 
             const progress = [];
             passages[randomInt].excerpt.split('').forEach((letter) => {
@@ -65,8 +68,9 @@ const Play = ({setIsActive, setIsStopped, setTime}) => {
     }
 
     const handleTimer = () => {
-        if (inputText.length >= passage.length) {
+        if (inputText.length >= passage.length - 1) {
             handleStop();
+            setIsFinished(true);
         } else {
             handleStart();
         }
@@ -75,7 +79,7 @@ const Play = ({setIsActive, setIsStopped, setTime}) => {
     return (
         <div className="Play">
             <h1>
-                Typing Speed Test
+                Type the passage below as fast and accurately as possible.
             </h1>
             <div className="prompt">
                 {testProgress.map((letter) => {
@@ -101,7 +105,7 @@ const Play = ({setIsActive, setIsStopped, setTime}) => {
             <form className="testInput">
                 <textarea 
                     id="testTextbox"
-                    placeholder="Start Typing..."
+                    placeholder="Timer begins when you start typing..."
                     rows="10"
                     cols="100"
                     onChange={(event) => {
@@ -110,6 +114,20 @@ const Play = ({setIsActive, setIsStopped, setTime}) => {
                         }}>
                 </textarea>
             </form>
+            {isFinished
+            ? <div className="results">
+            <div className="result">
+                You typed {totalWords} words in {time} seconds!
+            </div>
+            <div className="score">
+                Your typing speed is {Math.floor((totalWords*60)/time)} WPM (words per minute).
+            </div>
+            <div className="tryAgain" onClick={()=>{window.location.reload()}}>
+                Try Again
+            </div>
+            </div>
+            : <></>
+            }
         </div>
     )
 };

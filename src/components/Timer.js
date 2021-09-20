@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react';
 
 const Timer = (
-    {isActive, 
-    setIsActive, 
-    isStopped, 
-    setIsStopped, 
+    {isActive,  
+    isStopped,  
     time, 
     setTime}) => {
 
@@ -24,28 +22,11 @@ const Timer = (
         }
     }, [isActive, isStopped]);
 
-    const handleStart = () => {
-        setIsActive(true);
-        setIsStopped(false);
-    }
-
-    const handleStop = () => {
-        setIsActive(false);
-        setIsStopped(true);
-    }
-
-    const handleReset = () => {
-        setTime(0);
-        setIsActive(false);
-    }
-
     return (
         <div className="timer">
             <div>
-                {new Date(time * 1000).toISOString().substr(14, 5)}
+                <h1>{new Date(time * 1000).toISOString().substr(14, 5)}</h1>
             </div>
-            <button onClick={handleStart}>Start</button>
-            <button onClick={()=>{handleStop(); handleReset()}}>Stop</button>
         </div>
     )
 }
