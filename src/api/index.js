@@ -8,12 +8,3 @@ export async function getAllPassages() {
         throw error;
     }
 }
-
-export async function getPassageById(id) {
-    try {
-        const { data } = await axios.get(`/api/passages/${id}`);
-        return data;
-    } catch (error) {
-        throw error;
-    }
-}

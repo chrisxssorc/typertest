@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
     BrowserRouter as Router,
     Route,
@@ -7,10 +7,10 @@ import {
 
 import Navbar from './Navbar';
 import Play from './Play';
-import Home from './Home';
 import Timer from './Timer';
 
 const App = () => {
+    
     const [isActive, setIsActive] = useState(false);
     const [isStopped, setIsStopped] = useState(false);
     const [time, setTime] = useState(0);

@@ -1,10 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, { useEffect } from 'react';
 
-const Timer = (
-    {isActive,  
-    isStopped,  
-    time, 
-    setTime}) => {
+const Timer = ({isActive, isStopped, time, setTime}) => {
 
     useEffect(() => {
         let interval = null;

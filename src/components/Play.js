@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { getAllPassages } from '../api/index';
 
 const Play = ({setIsActive, setIsStopped, setTime, time}) => {
+
     const [playPrompt, setPlayPrompt] = useState({});
     const [passage, setPassage] = useState([]);
     const [totalWords, setTotalWords] = useState(0);
@@ -60,11 +61,6 @@ const Play = ({setIsActive, setIsStopped, setTime, time}) => {
     const handleStop = () => {
         setIsActive(false);
         setIsStopped(true);
-    }
-
-    const handleReset = () => {
-        setTime(0);
-        setIsActive(false);
     }
 
     const handleTimer = () => {
