@@ -85,13 +85,15 @@ const Play = ({setIsActive, setIsStopped, time}) => {
         // Stop the timer when the input length has exceeded the prompt length
         if (inputText.length >= passage.length - 1) {
             handleStop();
+            // Disable the text input when user is finished
             document.getElementById("testTextbox").disabled = true;
             setIsFinished(true);
         } else {
             handleStart();
         }
     }
-    let count = 0;
+
+    let letterCount = 0; // Varible to track the number of rendered letters
     return (
         <div className="Play">
             <h1>
@@ -99,12 +101,12 @@ const Play = ({setIsActive, setIsStopped, time}) => {
             </h1>
             <div className="prompt">
                 {testProgress.map((letter) => {
-                    count += 1
+                    letterCount += 1 // Keep track of how many letters have rendered
                     for (let key in letter){
                         if (key === ' '){
-                            if (count >= 100){
-                                count = 0;
-                                return (
+                            if (letterCount >= 100){
+                                letterCount = 0;
+                                return ( // When count exceeded, start new line on the next space character
                                     <div style={{backgroundColor: letter[key], flexBasis: "100%", height: "0"}}>
                                         &nbsp;
                                     </div>
@@ -140,7 +142,7 @@ const Play = ({setIsActive, setIsStopped, time}) => {
                         }}>
                 </textarea>
             </form>
-            {isFinished
+            {isFinished // Render div with results and score when user is finished
             ? <div className="results">
             <div className="result">
                 You typed {totalWords} words in {time} seconds!
