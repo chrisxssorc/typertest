@@ -85,12 +85,13 @@ const Play = ({setIsActive, setIsStopped, time}) => {
         // Stop the timer when the input length has exceeded the prompt length
         if (inputText.length >= passage.length - 1) {
             handleStop();
+            document.getElementById("testTextbox").disabled = true;
             setIsFinished(true);
         } else {
             handleStart();
         }
     }
-    
+    let count = 0;
     return (
         <div className="Play">
             <h1>
@@ -98,13 +99,23 @@ const Play = ({setIsActive, setIsStopped, time}) => {
             </h1>
             <div className="prompt">
                 {testProgress.map((letter) => {
+                    count += 1
                     for (let key in letter){
                         if (key === ' '){
-                            return (
-                                <div style={{backgroundColor: letter[key]}}>
-                                    &nbsp;
-                                </div>
-                            )
+                            if (count >= 100){
+                                count = 0;
+                                return (
+                                    <div style={{backgroundColor: letter[key], flexBasis: "100%", height: "0"}}>
+                                        &nbsp;
+                                    </div>
+                                )
+                            } else {
+                                return (
+                                    <div style={{backgroundColor: letter[key]}}>
+                                        &nbsp;
+                                    </div>
+                                )
+                            }
                         } else {
                             return (
                                 <div style={{backgroundColor: letter[key]}}>
