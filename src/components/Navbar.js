@@ -6,7 +6,7 @@ const Navbar = () => {
 
     return (
         <div className="Navbar">
-            <h1>Typer Test</h1>
+            <h1>TyperTest</h1>
         </div>
     )
 };

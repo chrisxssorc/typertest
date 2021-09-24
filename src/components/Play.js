@@ -104,7 +104,7 @@ const Play = ({setIsActive, setIsStopped, time}) => {
                     letterCount += 1 // Keep track of how many letters have rendered
                     for (let key in letter){
                         if (key === ' '){
-                            if (letterCount >= 100){
+                            if (letterCount >= 90){
                                 letterCount = 0;
                                 return ( // When count exceeded, start new line on the next space character
                                     <div style={{backgroundColor: letter[key], flexBasis: "100%", height: "0"}}>
@@ -128,14 +128,14 @@ const Play = ({setIsActive, setIsStopped, time}) => {
                 }})}
             </div>
             <div className="promptInfo">
-                From {playPrompt.title} by {playPrompt.author}
+                From <i>{playPrompt.title}</i> by {playPrompt.author}
             </div>
             <form className="testInputForm">
                 <textarea 
                     id="testTextbox"
                     placeholder="Timer begins when you start typing..."
-                    rows="10"
-                    cols="100"
+                    rows="7"
+                    cols="90"
                     onChange={(event) => {
                         handleTimer();
                         setInputText(event.target.value.split(''));
@@ -145,10 +145,10 @@ const Play = ({setIsActive, setIsStopped, time}) => {
             {isFinished // Render div with results and score when user is finished
             ? <div className="results">
             <div className="result">
-                You typed {totalWords} words in {time} seconds!
+                You typed <b>{totalWords}</b> words in <b>{time}</b> seconds!
             </div>
             <div className="score">
-                Your typing speed is {Math.floor((totalWords*60)/time)} WPM (words per minute).
+                Your typing speed is <b>{Math.floor((totalWords*60)/time)}</b> WPM (words per minute).
             </div>
             <div className="tryAgain" onClick={()=>{window.location.reload()}}>
                 Try Again

@@ -6,24 +6,71 @@
 }
 
 .Navbar {
-    background-color: red;
+    background-color: lightblue;
+    padding: 1rem;
+    font-size: 1.3rem;
+    text-align: center;
 }
 
 .timer {
-    display: flex;
+    margin: 1rem;
+    font-size: 2rem;
 }
 
 .playPage {
     display: flex;
     justify-content: space-between;
+    padding: 1rem;
 }
 
 .Play {
-    width: 75%;
+    width: 90%;
+}
+
+.Play h1 {
+    font-size: 1.4rem;
 }
 
 .Play .prompt {
     display: flex;
     flex-wrap: wrap;
     font-size: 1.5rem;
+    margin-top: 1rem;
+    padding: 0.8rem;
+}
+
+.Play .promptInfo {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+}
+
+#testTextbox {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-family: initial;
+    border: 2px solid black;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.result, .score {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.tryAgain {
+    background-color: lightblue;
+    font-size: 1.5rem;
+    max-width: 10%;
+    padding: 0.7rem;
+    border: 1px solid black;
+}
+
+.tryAgain:hover {
+    background-color: rgb(141, 175, 187);
+    cursor: pointer;
 }

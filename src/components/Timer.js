@@ -20,9 +20,7 @@ const Timer = ({isActive, isStopped, time, setTime}) => {
 
     return (
         <div className="timer">
-            <div>
-                <h1>{new Date(time * 1000).toISOString().substr(14, 5)}</h1>
-            </div>
+            <h1>{new Date(time * 1000).toISOString().substr(14, 5)}</h1>
         </div>
     )
 }
