@@ -78,6 +78,41 @@ async function populateInitialPassages() {
                 author: 'Ernest Hemingway',
                 title: 'A Farewell To Arms',
                 excerpt: 'In the late summer of that year we lived in a house in a village that looked across the river and the plain to the mountains. In the bed of the river there were pebbles and boulders, dry and white in the sun, and the water was clear and swiftly moving and blue in the channels. Troops went by the house and down the road and the dust they raised powdered the leaves of the trees.'
+            },
+            {
+                author: 'Charles Dickens',
+                title: 'A Tale of Two Cities',
+                excerpt: 'It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.'
+            },
+            {
+                author: 'Harper Lee',
+                title: 'To Kill a Mockingbird',
+                excerpt: "I wanted you to see what real courage is, instead of getting the idea that courage is a man with a gun in his hand. It's when you know you're licked before you begin, but you begin anyway and see it through no matter what."
+            },
+            {
+                author: 'Jeannette Walls',
+                title: 'The Glass Castle',
+                excerpt: "I never believed in Santa Claus. None of us kids did. Mom and Dad refused to let us. They couldn't afford expensive presents and they didn't want us to think we weren't as good as other kids who, on Christmas morning, found all sorts of fancy toys under the tree that were supposedly left by Santa Claus."
+            },
+            {
+                author: 'Vladimir Nabokov',
+                title: 'Lolita',
+                excerpt: 'You can always count on a murderer for a fancy prose style. Ladies and gentlemen of the jury, exhibit number one is what the seraphs, the misinformed, simple, noble-winged seraphs, envied. Look at this tangle of thorns.'
+            },
+            {
+                author: 'Charles Bukowski',
+                title: 'Factotum',
+                excerpt: 'If you’re going to try, go all the way. There is no other feeling like that. You will be alone with the gods, and the nights will flame with fire. You will ride life straight to perfect laughter. It’s the only good fight there is.'
+            },
+            {
+                author: 'Oriah Mountain Dreamer',
+                title: 'The Invitation',
+                excerpt: "It doesn't interest me what planets are squaring your moon. I want to know if you have touched the center of your own sorrow, if you have been opened by life's betrayals or have become shriveled and closed from fear of further pain! I want to know if you can sit with pain, mine or your own, without moving to hide it or fade it, or fix it."
+            },
+            {
+                author: 'Toni Morrison',
+                title: 'Song of Solomon',
+                excerpt: "Did you ever see the way the clouds love a mountain? They circle all around it; sometimes you can't even see the mountain for the clouds. But you know what? You go up top and what do you see? His head. The clouds never cover the head. His head pokes through, because the clouds let him; they don't wrap him up."
             }
         ];
 
