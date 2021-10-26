@@ -102,7 +102,7 @@ async function populateInitialPassages() {
             {
                 author: 'Charles Bukowski',
                 title: 'Factotum',
-                excerpt: 'If you’re going to try, go all the way. There is no other feeling like that. You will be alone with the gods, and the nights will flame with fire. You will ride life straight to perfect laughter. It’s the only good fight there is.'
+                excerpt: "If you're going to try, go all the way. There is no other feeling like that. You will be alone with the gods, and the nights will flame with fire. You will ride life straight to perfect laughter. It’s the only good fight there is."
             },
             {
                 author: 'Oriah Mountain Dreamer',
